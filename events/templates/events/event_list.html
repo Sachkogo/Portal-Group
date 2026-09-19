@@ -1,0 +1,23 @@
+<h1>Події</h1>
+
+{% for event in events %}
+    <div>
+        <h2>{{ event.title }}</h2>
+
+        <p>{{ event.description }}</p>
+
+        <p>
+            {{ event.date }}
+
+            {% if event.time %}
+                {{ event.time }}
+            {% endif %}
+        </p>
+
+        {% if event.location %}
+            <p>Місце: {{ event.location }}</p>
+        {% endif %}
+    </div>
+{% empty %}
+    <p>Подій поки немає.</p>
+{% endfor %}
